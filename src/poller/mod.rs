@@ -23,10 +23,14 @@
 
 //! OS and implementation-specific poll engines.
 
+#[cfg(feature = "polling")]
+pub mod polling;
+
 #[cfg(feature = "popol")]
 pub mod popol;
 
 use std::fmt::{self, Display, Formatter};
+#[cfg(unix)]
 use std::os::unix::io::AsRawFd;
 use std::time::Duration;
 use std::{io, ops};
