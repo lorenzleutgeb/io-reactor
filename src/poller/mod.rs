@@ -23,6 +23,9 @@
 
 //! OS and implementation-specific poll engines.
 
+#[cfg(feature = "mio")]
+pub mod mio;
+
 #[cfg(feature = "popol")]
 pub mod popol;
 

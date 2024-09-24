@@ -71,7 +71,7 @@ impl ResourceIdGenerator {
 /// things like [`RawFd`] and socket addresses can't operate like resource identifiers.
 #[derive(Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash, Debug, Display)]
 #[display(inner)]
-pub struct ResourceId(u64);
+pub struct ResourceId(pub(crate) u64);
 
 impl ResourceId {
     /// Resource id for the waker (always zero).
